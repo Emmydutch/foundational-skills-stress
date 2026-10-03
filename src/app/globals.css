@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: the `dark` class lands on <html> via the boot
+   script in layout.tsx (persisted under localStorage "fss-theme"). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  /* Brand navy ramp — executive chrome */
+  --color-brand-50: #f2f6fa;
+  --color-brand-100: #e2ecf5;
+  --color-brand-200: #c5d9ea;
+  --color-brand-300: #9bbdda;
+  --color-brand-400: #6a9ac4;
+  --color-brand-500: #477eab;
+  --color-brand-600: #35658f;
+  --color-brand-700: #2c5274;
+  --color-brand-800: #274561;
+  --color-brand-900: #1b3045;
+  --color-brand-950: #101f2e;
+
+  /* Surfaces */
+  --color-canvas: #f4f6f9;
+  --color-card: #ffffff;
+  --color-line: #dde4ec;
+  --color-ink: #16202c;
+  --color-muted: #5b6b7d;
+
+  /* Stress bands */
+  --color-stable: #15803d;
+  --color-stable-soft: #e7f3ea;
+  --color-watch: #b45309;
+  --color-watch-soft: #f9efdf;
+  --color-elevated: #c2410c;
+  --color-elevated-soft: #fbe9e0;
+  --color-critical: #b91c1c;
+  --color-critical-soft: #fae5e5;
+
+  /* Map no-data fill + subtle interactive wash */
+  --color-nodata: #dbe2ea;
+  --color-hover: rgba(16, 31, 46, 0.045);
+
+  /* Chart series — data-viz tokens that brighten in dark mode */
+  --color-chart-reading: #15803d;
+  --color-chart-math: #35658f;
+  --color-chart-amber: #b45309;
+  --color-chart-orange: #c2410c;
+  --color-chart-red: #b91c1c;
+  --color-chart-green: #4d7c0f;
+  --color-chart-slate: #5b6b7d;
+}
+
+/* Dark theme — overrides the tokens above. Utilities, inline styles, and SVG
+   fills all reference the variables, so the whole tree flips with the class.
+   Unlayered rules win over Tailwind's layered :root emission. */
+.dark {
+  color-scheme: dark;
+
+  --color-canvas: #0b1322;
+  --color-card: #121e30;
+  --color-line: #25344a;
+  --color-ink: #e8eef7;
+  --color-muted: #94a7bd;
+  --color-nodata: #26364e;
+  --color-hover: rgba(148, 167, 189, 0.09);
+
+  /* Accent steps that sit on dark surfaces (links, focus, live dots) */
+  --color-brand-400: #6fa8d8;
+  --color-brand-500: #7fb3d9;
+  --color-brand-600: #7db4dd;
+  --color-brand-700: #a3cae8;
+
+  --color-stable: #3fba74;
+  --color-stable-soft: #0e2a1c;
+  --color-watch: #dc9b2e;
+  --color-watch-soft: #33260f;
+  --color-elevated: #f07a3c;
+  --color-elevated-soft: #3a1c0e;
+  --color-critical: #ef5f5f;
+  --color-critical-soft: #3b1516;
+
+  --color-chart-reading: #3fbf74;
+  --color-chart-math: #6fa8d8;
+  --color-chart-amber: #dc9b2e;
+  --color-chart-orange: #f07a3c;
+  --color-chart-red: #ef6464;
+  --color-chart-green: #7fb53a;
+  --color-chart-slate: #94a7bd;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+/* Recharts chrome follows the theme via CSS (CSS rules beat SVG presentation
+   attributes, so the chart internals need no per-theme props). */
+.recharts-cartesian-grid line {
+  stroke: var(--color-line);
+}
+
+.recharts-cartesian-axis-line {
+  stroke: var(--color-line);
+}
+
+.recharts-cartesian-axis-tick text {
+  fill: var(--color-muted);
+}
+
+.recharts-tooltip-cursor {
+  stroke: var(--color-line);
+}
+
+@layer utilities {
+  .nums {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  .card {
+    background: var(--color-card);
+    border: 1px solid var(--color-line);
+    border-radius: 0.625rem;
+  }
+
+  .label-xs {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+}

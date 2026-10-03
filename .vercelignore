@@ -1,0 +1,14 @@
+# Dependencies / caches (never upload to Vercel)
+.venv/
+.qoder/
+.vercel-tmp/
+**/__pycache__/
+*.pyc
+
+# Ingest artifacts — reproducible via `npm run ingest`; the normalized
+# snapshots in data/snapshots DO ship and are required by the app.
+data/raw/
+data/*.log
+
+# Local env files
+.env*

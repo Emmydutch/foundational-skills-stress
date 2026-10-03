@@ -1,0 +1,6 @@
+# Streamlit edition of Foundational Skills Stress.
+# Altair ships with Streamlit; numpy arrives with pandas.
+# Plotly powers the world stress map on the executive brief.
+streamlit>=1.64
+pandas>=2.2
+plotly>=7.1

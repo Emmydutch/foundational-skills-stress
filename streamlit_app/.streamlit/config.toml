@@ -1,0 +1,112 @@
+# Streamlit theme mirroring the executive brand tokens used by the
+# Next.js edition (src/app/globals.css): navy ramp, canvas surfaces, and the
+# four stress-band colours.
+#
+# Dual mode: [theme] carries the light base + typography, and the explicit
+# [theme.light] / [theme.dark] variants enable the in-app mode switcher
+# (settings menu). `base` is only valid in [theme] — never in a variant.
+
+[theme]
+base = "light"
+primaryColor = "#35658f"
+backgroundColor = "#f4f6f9"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#16202c"
+linkColor = "#35658f"
+codeBackgroundColor = "#eef2f7"
+codeTextColor = "#16202c"
+borderColor = "#dde4ec"
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "10px"
+buttonRadius = "8px"
+font = "'Inter':https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+baseFontSize = 15
+baseFontWeight = 400
+headingFontSizes = ["32px", "26px", "21px", "17px", "15px", "13px"]
+headingFontWeights = [600, 600, 600, 600, 600, 600]
+linkUnderline = false
+chartCategoricalColors = ["#35658f", "#15803d", "#b45309", "#c2410c", "#b91c1c", "#6a9ac4", "#9bbdda"]
+
+# Stress-band + status palette (drives badges, coloured text, and sparklines).
+grayColor = "#5b6b7d"
+blueColor = "#35658f"
+greenColor = "#15803d"
+redColor = "#b91c1c"
+yellowColor = "#b45309"
+orangeColor = "#c2410c"
+violetColor = "#8b5cf6"
+
+dataframeBorderColor = "#dde4ec"
+dataframeHeaderBackgroundColor = "#f2f6fa"
+
+[theme.light]
+primaryColor = "#35658f"
+backgroundColor = "#f4f6f9"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#16202c"
+linkColor = "#35658f"
+codeBackgroundColor = "#eef2f7"
+codeTextColor = "#16202c"
+borderColor = "#dde4ec"
+chartCategoricalColors = ["#35658f", "#15803d", "#b45309", "#c2410c", "#b91c1c", "#6a9ac4", "#9bbdda"]
+grayColor = "#5b6b7d"
+blueColor = "#35658f"
+greenColor = "#15803d"
+redColor = "#b91c1c"
+yellowColor = "#b45309"
+orangeColor = "#c2410c"
+violetColor = "#8b5cf6"
+dataframeBorderColor = "#dde4ec"
+dataframeHeaderBackgroundColor = "#f2f6fa"
+
+# Dark variant — mirrors the Next.js .dark token overrides.
+[theme.dark]
+primaryColor = "#6fa8d8"
+backgroundColor = "#0b1322"
+secondaryBackgroundColor = "#121e30"
+textColor = "#e8eef7"
+linkColor = "#7db4dd"
+codeBackgroundColor = "#0f1929"
+codeTextColor = "#e8eef7"
+borderColor = "#25344a"
+chartCategoricalColors = ["#6fa8d8", "#3fbf74", "#dc9b2e", "#f07a3c", "#ef6464", "#9bbdda", "#c5d9ea"]
+grayColor = "#94a7bd"
+blueColor = "#6fa8d8"
+greenColor = "#3fbf74"
+redColor = "#ef6464"
+yellowColor = "#dc9b2e"
+orangeColor = "#f07a3c"
+violetColor = "#a78bfa"
+dataframeBorderColor = "#25344a"
+dataframeHeaderBackgroundColor = "#182640"
+
+[theme.sidebar]
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f2f6fa"
+codeBackgroundColor = "#eef2f7"
+textColor = "#16202c"
+borderColor = "#dde4ec"
+primaryColor = "#35658f"
+dataframeHeaderBackgroundColor = "#f2f6fa"
+dataframeBorderColor = "#dde4ec"
+
+[theme.light.sidebar]
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f2f6fa"
+codeBackgroundColor = "#eef2f7"
+textColor = "#16202c"
+borderColor = "#dde4ec"
+primaryColor = "#35658f"
+dataframeHeaderBackgroundColor = "#f2f6fa"
+dataframeBorderColor = "#dde4ec"
+
+[theme.dark.sidebar]
+backgroundColor = "#121e30"
+secondaryBackgroundColor = "#0f1929"
+codeBackgroundColor = "#0f1929"
+textColor = "#e8eef7"
+borderColor = "#25344a"
+primaryColor = "#6fa8d8"
+dataframeHeaderBackgroundColor = "#182640"
+dataframeBorderColor = "#25344a"
